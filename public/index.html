@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatNode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <div class="page" id="loginPage">
+      <div class="login-card">
+        <div class="login-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/>
+          </svg>
+        </div>
+        <h1>Bem-vindo ao ChatNode</h1>
+        <p>Entre com seu nome para começar a conversar</p>
+        <input type="text" id="loginNameInput" placeholder="Seu nome" autocomplete="off" />
+        <button id="loginBtn">Entrar no chat</button>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="page" id="chatPage">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/>
+            </svg>
+            <span>ChatNode</span>
+          </div>
+        </div>
+        <div class="sidebar-section-title">Online agora</div>
+        <ul class="userList"></ul>
+      </aside>
+
+      <main class="chatMain">
+        <header class="chatHeader">
+          <div class="chatHeader-info">
+            <span class="chatHeader-hash">#</span>
+            <strong>geral</strong>
+          </div>
+          <span class="chatHeader-count" id="onlineCount">0 online</span>
+        </header>
+
+        <div class="chatArea">
+          <ul class="chatList"></ul>
+        </div>
+
+        <div class="chatInputArea">
+          <input type="text" id="chatTextInput" placeholder="Mensagem #geral" autocomplete="off" />
+          <button id="sendBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
